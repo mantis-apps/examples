@@ -1,5 +1,7 @@
-<section class="p-8 bg-white rounded-lg shadow-lg max-w-96 mx-auto mt-20">
-  <div class="flex items-center mb-6">
+<section
+  class="p-8 bg-white rounded-lg shadow-lg max-w-96 mx-auto mt-20 flex flex-col"
+>
+  <div class="flex items-center">
     <svg
       xmlns="http://www.w3.org/2000/svg"
       fill="none"
@@ -16,11 +18,14 @@
     </svg>
     <h1 class="font-semibold ml-3 text-lg text-gray-600">Todos</h1>
   </div>
-
-  <ul class="flex flex-col">
-    @for (todo of todos; track todo) {
-    <li>
-      <app-todo-item [todo]="todo" (remove)="removeTodo($event)" />
+  <ul class="flex flex-col gap-2 mt-5 mb-4">
+    @for (todo of todos$ | async; track todo._id) {
+    <li class="">
+      <app-todo-item
+        [todo]="todo"
+        (remove)="removeTodo($event)"
+        (update)="updateTodo($event)"
+      />
     </li>
     }
   </ul>

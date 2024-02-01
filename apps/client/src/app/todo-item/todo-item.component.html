@@ -17,11 +17,11 @@
     </label>
   </div>
   } @else {
-  <label class="flex items-center" for="{{ 'task_' + todo.id }}">
+  <label class="flex items-center" for="{{ 'task_' + todo._id }}">
     <input
       type="checkbox"
       class="w-5 h-5 text-transparent border-2 border-gray-300 rounded-full appearance-none checked:bg-green-400 checked:border-green-400 checked:text-white',"
-      id="{{ 'task_' + todo.id }}"
+      id="{{ 'task_' + todo._id }}"
       [checked]="todo.completed"
       (click)="toggleTodo()"
     />

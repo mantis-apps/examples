@@ -19,17 +19,18 @@ import { CommonModule } from '@angular/common';
 })
 export class TodoItemComponent implements AfterViewChecked {
   @Input({ required: true }) todo!: Todo;
-
   @Output() remove = new EventEmitter<Todo>();
-
+  @Output() update = new EventEmitter<Todo>();
   @ViewChild('todoInputRef') inputRef?: ElementRef;
 
   title = '';
-
   isEditing = false;
 
   toggleTodo(): void {
-    this.todo.completed = !this.todo.completed;
+    this.update.emit({
+      ...this.todo,
+      completed: !this.todo.completed,
+    });
   }
 
   removeTodo(): void {
@@ -42,17 +43,22 @@ export class TodoItemComponent implements AfterViewChecked {
 
   handleBlur() {
     this.isEditing = false;
+    this.updateTodo();
   }
 
   handleFocus() {
-    this.title = this.todo.title;
+    // ....please forgive me
+    setTimeout(() => (this.title = this.todo.title));
   }
 
   updateTodo() {
     if (!this.title) {
       this.remove.emit(this.todo);
     } else {
-      this.todo.title = this.title;
+      this.update.emit({
+        ...this.todo,
+        title: this.title,
+      });
     }
 
     this.isEditing = false;

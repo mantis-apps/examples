@@ -1,4 +1,4 @@
-<div class="flex items-center w-full h-8 px-2 mt-5 text-sm rounded">
+<div class="flex items-center w-full h-8 px-2 text-sm rounded">
   <button (click)="addTodo()">
     <svg
       xmlns="http://www.w3.org/2000/svg"
@@ -17,7 +17,7 @@
   <input
     class="flex-grow h-8 ml-4 bg-transparent focus:outline-none text-gray-600"
     type="text"
-    placeholder="add a new task"
+    placeholder="What needs to get done?"
     [(ngModel)]="title"
     (keyup.enter)="addTodo()"
   />

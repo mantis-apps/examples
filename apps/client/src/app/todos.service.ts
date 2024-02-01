@@ -1,30 +1,37 @@
 import { Injectable } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
+import { Observable } from 'rxjs';
 
 export interface Todo {
-  id: string;
+  _id: string;
   title: string;
   completed: boolean;
 }
 
 @Injectable({ providedIn: 'root' })
 export class TodosService {
-  todos: Todo[] = [
-    { id: '1', title: 'Learn Mantis', completed: false },
-    { id: '2', title: 'Ship awesome fullstack apps', completed: false },
-    { id: '3', title: 'Tell all my friends about it', completed: false },
-  ];
+  private apiUrl = 'http://localhost:3000/api';
 
-  addItem(title: string): void {
-    const todo: Todo = {
-      id: Date.now().toString(),
+  constructor(private http: HttpClient) {}
+
+  getAllItems(): Observable<Todo[]> {
+    return this.http.get<Todo[]>(`${this.apiUrl}/todos`);
+  }
+
+  addItem(title: string): Observable<Todo> {
+    const todo: Omit<Todo, '_id'> = {
       title,
       completed: false,
     };
-    this.todos.push(todo);
+
+    return this.http.post<Todo>(`${this.apiUrl}/todos`, todo);
   }
 
-  removeItem(todo: Todo): void {
-    const index = this.todos.indexOf(todo);
-    this.todos.splice(index, 1);
+  updateItem(todo: Todo): Observable<Todo> {
+    return this.http.patch<Todo>(`${this.apiUrl}/todos/${todo._id}`, todo);
+  }
+
+  removeItem(todo: Todo): Observable<void> {
+    return this.http.delete<void>(`${this.apiUrl}/todos/${todo._id}`);
   }
 }
