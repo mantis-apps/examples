@@ -24,7 +24,7 @@
 
 ## Start the app
 
-To start the development servers run `npx nx run-many --target=serve --projects=client,server`. Open your browser and navigate to `http://localhost:4200/`. Happy coding!
+To start the development servers run `npx nx run-many --target=serve --projects=web-client,server`. Open your browser and navigate to `http://localhost:4200/`. Happy coding!
 
 ## Testing
 
