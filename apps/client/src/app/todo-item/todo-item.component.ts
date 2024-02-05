@@ -47,7 +47,6 @@ export class TodoItemComponent implements AfterViewChecked {
   }
 
   handleFocus() {
-    // ....please forgive me
     setTimeout(() => (this.title = this.todo.title));
   }
 

@@ -7,12 +7,10 @@ import { TodosModule } from './todos/todos.module';
 
 @Module({
   imports: [
+    ConfigModule.forRoot({
+      isGlobal: true,
+    }),
     MongooseModule.forRootAsync({
-      imports: [
-        ConfigModule.forRoot({
-          envFilePath: ['.env.development'],
-        }),
-      ],
       inject: [ConfigService],
       useFactory: async (config: ConfigService) => ({
         uri: config.get<string>('MONGODB_URI'),

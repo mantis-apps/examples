@@ -12,13 +12,15 @@
 
    - If you don't already have a Mongo db instance you can use, follow the steps to [set up an instance with MongoDB Atlas (it's free)](https://www.mongodb.com/docs/atlas/getting-started/).
 
-3. Create a config file in `apps/server` called `.env` i.e. `apps/server/.env`.
+3. Create a config file in `apps/server` called `.env.local` i.e. `apps/server/.env.local`.
 4. Place your mongo connection string in that file as the following environment variable
 
    ```shell
    # Example
    MONGODB_URI='mongodb+srv://<user>:<password>@<cluster-name>.mongodb.net/?retryWrites=true&w=majority'
    ```
+
+> To learn more about how Nx loads environment variables, see [Definte Environment Variables](https://nx.dev/recipes/tips-n-tricks/define-environment-variables#define-environment-variables)
 
 ## Start the app
 
