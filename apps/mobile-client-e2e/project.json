@@ -1,22 +1,22 @@
 {
-  "name": "client-e2e",
+  "name": "mobile-client-e2e",
   "$schema": "../../node_modules/nx/schemas/project-schema.json",
   "projectType": "application",
-  "sourceRoot": "apps/client-e2e/src",
+  "sourceRoot": "apps/mobile-client-e2e/src",
   "targets": {
     "e2e": {
       "executor": "@nx/cypress:cypress",
       "options": {
-        "cypressConfig": "apps/client-e2e/cypress.config.ts",
+        "cypressConfig": "apps/mobile-client-e2e/cypress.config.ts",
         "testingType": "e2e",
-        "devServerTarget": "client:serve:development"
+        "devServerTarget": "mobile-client:serve:development"
       },
       "configurations": {
         "production": {
-          "devServerTarget": "client:serve:production"
+          "devServerTarget": "mobile-client:serve:production"
         },
         "ci": {
-          "devServerTarget": "client:serve-static"
+          "devServerTarget": "mobile-client:serve-static"
         }
       }
     },
@@ -26,5 +26,5 @@
     }
   },
   "tags": [],
-  "implicitDependencies": ["client"]
+  "implicitDependencies": ["mobile-client"]
 }

@@ -1,9 +1,9 @@
 /* eslint-disable */
 export default {
-  displayName: 'client',
+  displayName: 'mobile-client',
   preset: '../../jest.preset.js',
   setupFilesAfterEnv: ['<rootDir>/src/test-setup.ts'],
-  coverageDirectory: '../../coverage/apps/client',
+  coverageDirectory: '../../coverage/apps/mobile-client',
   transform: {
     '^.+\\.(ts|mjs|js|html)$': [
       'jest-preset-angular',

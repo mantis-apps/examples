@@ -1,6 +1,6 @@
 import { getGreeting } from '../support/app.po';
 
-describe('client-e2e', () => {
+describe('mobile-client-e2e', () => {
   beforeEach(() => cy.visit('/'));
 
   it('should display welcome message', () => {

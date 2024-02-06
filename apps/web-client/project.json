@@ -1,28 +1,31 @@
 {
-  "name": "client",
+  "name": "web-client",
   "$schema": "../../node_modules/nx/schemas/project-schema.json",
   "projectType": "application",
   "prefix": "app",
-  "sourceRoot": "apps/client/src",
+  "sourceRoot": "apps/web-client/src",
   "tags": [],
   "targets": {
     "build": {
       "executor": "@angular-devkit/build-angular:application",
       "outputs": ["{options.outputPath}"],
       "options": {
-        "outputPath": "dist/apps/client",
-        "index": "apps/client/src/index.html",
-        "browser": "apps/client/src/main.ts",
+        "outputPath": "dist/apps/web-client",
+        "index": "apps/web-client/src/index.html",
+        "browser": "apps/web-client/src/main.ts",
         "polyfills": ["zone.js"],
-        "tsConfig": "apps/client/tsconfig.app.json",
+        "tsConfig": "apps/web-client/tsconfig.app.json",
         "inlineStyleLanguage": "scss",
-        "assets": ["apps/client/src/favicon.ico", "apps/client/src/assets"],
-        "styles": ["apps/client/src/styles.scss"],
+        "assets": [
+          "apps/web-client/src/favicon.ico",
+          "apps/web-client/src/assets"
+        ],
+        "styles": ["apps/web-client/src/styles.scss"],
         "scripts": [],
-        "server": "apps/client/src/main.server.ts",
+        "server": "apps/web-client/src/main.server.ts",
         "prerender": true,
         "ssr": {
-          "entry": "apps/client/server.ts"
+          "entry": "apps/web-client/server.ts"
         }
       },
       "configurations": {
@@ -53,10 +56,10 @@
       "executor": "@angular-devkit/build-angular:dev-server",
       "configurations": {
         "production": {
-          "buildTarget": "client:build:production"
+          "buildTarget": "web-client:build:production"
         },
         "development": {
-          "buildTarget": "client:build:development"
+          "buildTarget": "web-client:build:development"
         }
       },
       "defaultConfiguration": "development"
@@ -64,7 +67,7 @@
     "extract-i18n": {
       "executor": "@angular-devkit/build-angular:extract-i18n",
       "options": {
-        "buildTarget": "client:build"
+        "buildTarget": "web-client:build"
       }
     },
     "lint": {
@@ -75,14 +78,14 @@
       "executor": "@nx/jest:jest",
       "outputs": ["{workspaceRoot}/coverage/{projectRoot}"],
       "options": {
-        "jestConfig": "apps/client/jest.config.ts"
+        "jestConfig": "apps/web-client/jest.config.ts"
       }
     },
     "serve-static": {
       "executor": "@nx/web:file-server",
       "options": {
-        "buildTarget": "client:build",
-        "staticFilePath": "dist/apps/client/browser"
+        "buildTarget": "web-client:build",
+        "staticFilePath": "dist/apps/web-client/browser"
       }
     }
   }
