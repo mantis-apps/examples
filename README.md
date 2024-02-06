@@ -22,9 +22,9 @@
 
 > To learn more about how Nx loads environment variables, see [Definte Environment Variables](https://nx.dev/recipes/tips-n-tricks/define-environment-variables#define-environment-variables)
 
-## Start the app
+## Start the web app
 
-To start the development servers run `npx nx run-many --target=serve --projects=web-client,server`. Open your browser and navigate to `http://localhost:4200/`. Happy coding!
+To start the development servers run `npx nx run-many --target=serve --projects=web-client,mobile-client,server`. Open your browser and navigate to `http://localhost:4200/` to see the web app and `http://localhost:4300/` for the mobile app. Happy coding!
 
 ## Testing
 
