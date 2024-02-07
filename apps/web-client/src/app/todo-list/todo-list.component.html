@@ -18,7 +18,8 @@
     </svg>
     <h1 class="font-semibold ml-3 text-lg text-gray-600">Todos</h1>
   </div>
-  <ul class="flex flex-col gap-2 mt-5 mb-4">
+  @if((todos$ | async)?.length) {
+  <ul class="flex flex-col gap-2 mt-5">
     @for (todo of todos$ | async; track todo._id) {
     <li class="">
       <app-todo-item
@@ -29,5 +30,8 @@
     </li>
     }
   </ul>
-  <app-add-todo (add)="addTodo($event)" />
+  }
+  <div class="mt-4">
+    <app-add-todo (add)="addTodo($event)" />
+  </div>
 </section>

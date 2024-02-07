@@ -2,7 +2,7 @@
   "name": "mobile-client",
   "$schema": "../../node_modules/nx/schemas/project-schema.json",
   "projectType": "application",
-  "prefix": "mantis-todo",
+  "prefix": "app",
   "sourceRoot": "apps/mobile-client/src",
   "tags": [],
   "targets": {
@@ -51,7 +51,13 @@
         "development": {
           "optimization": false,
           "extractLicenses": false,
-          "sourceMap": true
+          "sourceMap": true,
+          "fileReplacements": [
+            {
+              "replace": "apps/mobile-client/src/environments/environment.ts",
+              "with": "apps/mobile-client/src/environments/environment.development.ts"
+            }
+          ]
         }
       },
       "defaultConfiguration": "production"
