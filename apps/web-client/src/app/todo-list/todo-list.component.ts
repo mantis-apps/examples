@@ -1,12 +1,12 @@
 import { Component, OnInit } from '@angular/core';
 import { BehaviorSubject } from 'rxjs';
-import { TodosService, Todo } from '../todos.service';
+import { TodosService, Todo, CreateTodo } from '../services/todos.service';
 import { TodoItemComponent } from '../todo-item/todo-item.component';
 import { AddTodoComponent } from '../add-todo/add-todo.component';
 import { CommonModule } from '@angular/common';
 
 @Component({
-  selector: 'app-todo-list',
+  selector: 'app-list',
   standalone: true,
   imports: [TodoItemComponent, AddTodoComponent, CommonModule],
   templateUrl: './todo-list.component.html',
@@ -27,19 +27,19 @@ export class TodoListComponent implements OnInit {
 
   loadTodos(): void {
     this.todosService
-      .getAllItems()
+      .getAllTodos()
       .subscribe((todos) => this.todos$.next(todos));
   }
 
   removeTodo(todo: Todo): void {
-    this.todosService.removeItem(todo).subscribe(() => this.loadTodos());
+    this.todosService.removeTodo(todo).subscribe(() => this.loadTodos());
   }
 
   updateTodo(todo: Todo): void {
-    this.todosService.updateItem(todo).subscribe(() => this.loadTodos());
+    this.todosService.updateTodo(todo).subscribe(() => this.loadTodos());
   }
 
-  addTodo(title: string): void {
-    this.todosService.addItem(title).subscribe(() => this.loadTodos());
+  addTodo(todo: CreateTodo): void {
+    this.todosService.addTodo(todo).subscribe(() => this.loadTodos());
   }
 }
