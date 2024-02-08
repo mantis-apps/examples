@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { BehaviorSubject } from 'rxjs';
-import { TodosService, Todo, CreateTodo } from '../services/todos.service';
+import { TodosService, Todo, CreateTodo } from 'app/services/todos.service';
 import { TodoItemComponent } from '../todo-item/todo-item.component';
 import { AddTodoComponent } from '../add-todo/add-todo.component';
 import { CommonModule } from '@angular/common';

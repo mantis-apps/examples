@@ -1,6 +1,7 @@
 {
   "compilerOptions": {
     "target": "es2022",
+    "baseUrl": "src",
     "useDefineForClassFields": false,
     "esModuleInterop": true,
     "forceConsistentCasingInFileNames": true,
@@ -21,6 +22,9 @@
     },
     {
       "path": "./tsconfig.editor.json"
+    },
+    {
+      "path": "./.storybook/tsconfig.json"
     }
   ],
   "extends": "../../tsconfig.base.json",

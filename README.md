@@ -26,6 +26,10 @@
 
 To start the development servers run `npx nx run-many --target=serve --projects=web-client,mobile-client,server`. Open your browser and navigate to `http://localhost:4200/` to see the web app and `http://localhost:4300/` for the mobile app. Happy coding!
 
+## Storybook
+
+To start storybook for a client run `npx nx run <client>:storybook` e.g. `npx nx run web-client:storybook`. Open your browser and navigate to `http://localhost:5200`
+
 ## Testing
 
 To run all of the unit tests, run `npx nx run-many --all --target=test`.
