@@ -22,17 +22,18 @@
       type="checkbox"
       class="w-5 h-5 text-transparent border-2 border-gray-300 rounded-full appearance-none checked:bg-green-400 checked:border-green-400 checked:text-white',"
       id="{{ 'task_' + todo._id }}"
-      [checked]="todo.completed"
-      (click)="toggleTodo()"
+      [ngModel]="todo.completed"
+      (change)="toggleTodo()"
     />
     <span
       [ngClass]="[
-        'ml-4 text-sm cursor-text',
+        'mx-4 text-sm cursor-text',
         todo.completed ? 'line-through text-gray-400' : 'text-gray-600'
       ]"
       (click)="startEdit()"
-      >{{ todo.title }}</span
     >
+      {{ todo.title }}
+    </span>
   </label>
   <button class="ml-auto hidden group-hover:block" (click)="removeTodo()">
     <svg

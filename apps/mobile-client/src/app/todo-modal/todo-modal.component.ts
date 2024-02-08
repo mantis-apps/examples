@@ -2,7 +2,7 @@ import { Component, Input, OnInit } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { ModalController } from '@ionic/angular';
 import { IonicModule } from '@ionic/angular';
-import { CreateTodo, Todo } from '../services/todos.service';
+import { CreateTodo, Todo } from 'app/services/todos.service';
 
 @Component({
   selector: 'app-todo-modal',
@@ -10,7 +10,7 @@ import { CreateTodo, Todo } from '../services/todos.service';
   imports: [IonicModule, FormsModule],
   templateUrl: './todo-modal.component.html',
 })
-export class AddTodoModalComponent implements OnInit {
+export class TodoModalComponent implements OnInit {
   @Input() todo?: Todo;
   title = '';
 

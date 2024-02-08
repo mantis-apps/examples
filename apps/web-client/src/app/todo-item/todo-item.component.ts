@@ -8,7 +8,7 @@ import {
   AfterViewChecked,
 } from '@angular/core';
 import { FormsModule } from '@angular/forms';
-import { Todo } from '../services/todos.service';
+import { Todo } from 'app/services/todos.service';
 import { CommonModule } from '@angular/common';
 
 @Component({

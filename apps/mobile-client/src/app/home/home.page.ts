@@ -1,9 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { IonRefresherCustomEvent, RefresherEventDetail } from '@ionic/core';
-import { Todo, TodosService } from '../services/todos.service';
+import { Todo, TodosService } from 'app/services/todos.service';
 import { BehaviorSubject, firstValueFrom } from 'rxjs';
 import { ModalController } from '@ionic/angular';
-import { AddTodoModalComponent as TodoModalComponent } from '../todo-modal/todo-modal.component';
+import { TodoModalComponent } from '../todo-modal/todo-modal.component';
 
 @Component({
   selector: 'app-home',

@@ -1,6 +1,6 @@
 import { Component, EventEmitter, Output } from '@angular/core';
 import { FormsModule } from '@angular/forms';
-import { CreateTodo } from '../services/todos.service';
+import { CreateTodo } from 'app/services/todos.service';
 
 @Component({
   selector: 'app-add-todo',
@@ -18,7 +18,7 @@ export class AddTodoComponent {
       this.add.emit({
         title: this.title,
         completed: false,
-      } satisfies CreateTodo);
+      });
 
       // Reset title to clear input field.
       this.title = '';
