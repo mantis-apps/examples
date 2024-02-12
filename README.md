@@ -28,7 +28,10 @@ To start the development servers run `npx nx run-many --target=serve --projects=
 
 ## Storybook
 
-To start storybook for a client run `npx nx run <client>:storybook` e.g. `npx nx run web-client:storybook`. Open your browser and navigate to `http://localhost:5200`
+To start storybook for a client run `npx nx run <client>:storybook`.
+
+For the web client, run `npx nx run web-client:storybook`, open your browser, and navigate to `http://localhost:5200`.
+For the mobile client, run `npx nx run mobile-client:storybook`, open your browser, and navigate to `http://localhost:5300`.
 
 ## Testing
 
